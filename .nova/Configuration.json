@@ -1,0 +1,10 @@
+{
+  "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
+    "javascript"
+  ],
+  "eablokker.tabsSidebar.config.customTabOrder" : [
+    "\/Users\/garybuckle\/Coding\/geonet\/src\/App.jsx",
+    "\/Users\/garybuckle\/Coding\/geonet\/src\/UsersFetch.jsx",
+    "\/Users\/garybuckle\/Coding\/geonet\/src\/GeoFetch.jsx"
+  ]
+}
