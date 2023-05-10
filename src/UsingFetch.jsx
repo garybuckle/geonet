@@ -4,7 +4,7 @@ const UsingFetch = () => {
   const [users, setUsers] = useState([]);
 
   const fetchData = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("http://api.geonet.org.nz/news/geonet")
       .then((response) => {
         return response.json();
       })
