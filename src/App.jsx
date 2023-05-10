@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 // import UsingFetch from './UsingFetch';
-import UsersFetch from './UsersFetch';
-import GeoFetch from './GeoFetch';
+import UsersFetch from "./UsersFetch";
+import GeoFetch from "./GeoFetch";
 function App() {
   return (
     <>
       <div>
-        <h1>GEONET</h1>
+        <h1>GEONET - Earthquake info for NZ </h1>
       </div>
       <div>
         <GeoFetch />
