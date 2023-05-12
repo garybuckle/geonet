@@ -1,26 +1,23 @@
-import React, { useEffect, useState, useRef } from "react";
-import News from "./components/News";
+import React, { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
+import News from './components/News';
 
 const GeoFetch = () => {
   const [apiData, setApiData] = useState([]);
   const [getData, setGetData] = useState(false);
-  const [url, setUrl] = useState("news");
+  const [url, setUrl] = useState('news');
   const endPoints = {
-    news: { url: "http://api.geonet.org.nz/news/geonet" },
+    news: { url: 'http://api.geonet.org.nz/news/geonet' },
     strong: {
-      url: "http://api.geonet.org.nz/geonet/intensity/strong/processed/",
+      url: 'http://api.geonet.org.nz/geonet/intensity/strong/processed/',
     },
-    intensity: { url: "http://api.geonet.org.nz/intensity?type=measured" },
+    intensity: { url: 'http://api.geonet.org.nz/intensity?type=measured' },
   };
   const fetchUrl = endPoints.news.url;
   const fetchData = () => {
-    fetch(fetchUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setApiData(data);
-      });
+    axios.get(fetchUrl).then((response) => {
+      setApiData(response.data);
+    });
   };
 
   useEffect(() => {
@@ -32,17 +29,13 @@ const GeoFetch = () => {
     setGetData(true);
   };
   const urlHandler = (event) => {
-    console.log("url button", buttonRef.current.value);
+    console.log('url button', buttonRef.current.value);
   };
 
   const newsKeys = Object.entries(apiData);
   const intensityKeys = Object.entries(apiData);
   // Log out what's being passed
-  console.log("Raw Data", apiData);
-  fetchUrl == endPoints.intensity.url
-    ? console.log("Intensity Data", intensityKeys)
-    : null;
-  fetchUrl == endPoints.news.url ? console.log("News", newsKeys) : null;
+  console.log('Raw api data Data', apiData);
 
   return (
     <>
@@ -54,17 +47,20 @@ const GeoFetch = () => {
         </div>
       </div>
       <div>
+        <News apiData={apiData}>News</News>
+        {/*  
         <h2>Results</h2>
         {fetchUrl == endPoints.news.url ? (
-          <News newsKeys={newsKeys} />
+          <News newsKeys={apiData} />
         ) : (
-          "Incorrect News Url"
+          'No News Url supplied'
         )}
         {fetchUrl == endPoints.intensity.url ? (
           <News intensityKeys={intensityKeys} />
         ) : (
-          "Incorrect Intensity Url"
+          'No Intensity Url supplied'
         )}
+        */}
       </div>
     </>
   );

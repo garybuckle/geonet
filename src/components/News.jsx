@@ -1,24 +1,19 @@
-const News = ({ newsKeys }) => {
+const News = ({ apiData }) => {
   return (
     <>
-      {console.log(
-        { newsKeys },
-        "New Passed ",
-        "length = ",
-        { newsKeys }.length
-      )}
       <div>
         <h2>Shows the News on quakes</h2>
-        {newsKeys.length > 0 && (
+        {/* 
+        {apiData[page][feed].length > 0 && (
           <ul>
-            {newsKeys[2][1].map((item) => (
-              <li key={item.title}>
+            {apiData.map((item) => (
+              <li key={item.page.feed.title}>
                 {item.title} <span> - {item.tag} </span>
                 <span> - {item.type} </span>
               </li>
             ))}
           </ul>
-        )}
+        )}  */}
       </div>
     </>
   );
