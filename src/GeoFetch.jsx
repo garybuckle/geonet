@@ -35,7 +35,6 @@ const GeoFetch = () => {
   const newsKeys = Object.entries(apiData);
   const intensityKeys = Object.entries(apiData);
   // Log out what's being passed
-  console.log('Raw api data Data', apiData);
 
   return (
     <>
@@ -47,6 +46,7 @@ const GeoFetch = () => {
         </div>
       </div>
       <div>
+        {console.log('Raw api data ', { apiData })}
         <News apiData={apiData}>News</News>
         {/*  
         <h2>Results</h2>
