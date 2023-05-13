@@ -8,10 +8,7 @@ const News = ({ apiData }) => {
         <h2>Shows the News on quakes</h2>
         <ul>
           {apiArray.map((item) => (
-            <li key={item.title}>
-              {item.title} <span> - {item.tag} </span>
-              <span> - {item.type} </span>
-            </li>
+            <li key={item.title}>{item.title}</li>
           ))}
         </ul>
 

@@ -47,20 +47,18 @@ const GeoFetch = () => {
       </div>
       <div>
         {console.log('Raw api data ', { apiData })}
-        <News apiData={apiData}>News</News>
-        {/*  
+
         <h2>Results</h2>
         {fetchUrl == endPoints.news.url ? (
-          <News newsKeys={apiData} />
+          <News apiData={apiData} />
         ) : (
           'No News Url supplied'
         )}
         {fetchUrl == endPoints.intensity.url ? (
-          <News intensityKeys={intensityKeys} />
+          <Intensity apiData={apiData} />
         ) : (
           'No Intensity Url supplied'
         )}
-        */}
       </div>
     </>
   );
