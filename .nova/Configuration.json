@@ -1,13 +1,11 @@
 {
   "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
-    "javascript",
-    "json"
+    "javascript"
   ],
   "eablokker.tabsSidebar.config.customTabOrder" : [
-    "\/Users\/garybuckle\/Coding\/geonet\/src\/App.jsx",
     "\/Users\/garybuckle\/Coding\/geonet\/src\/GeoFetch.jsx",
     "\/Users\/garybuckle\/Coding\/geonet\/src\/components\/News.jsx",
-    "\/Users\/garybuckle\/Coding\/geonet\/src\/news.json",
+    "\/Users\/garybuckle\/Coding\/geonet\/src\/feeds.js",
     "\/Users\/garybuckle\/Coding\/geonet\/src\/components\/Intensity.jsx"
   ]
 }
