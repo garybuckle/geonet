@@ -1,5 +1,5 @@
-const Intensity = (intensityKeys) => {
-  console.log("Intensity Keys Received", intensityKeys);
+const Intensity = (apiData) => {
+  console.log("Intensity Keys Received", apiData);
 };
 
 export default Intensity;

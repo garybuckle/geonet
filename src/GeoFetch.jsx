@@ -16,25 +16,25 @@ const GeoFetch = () => {
   const fetchUrl = endPoints.news.url;
   const fetchData = () => {
     axios.get(fetchUrl).then((response) => {
-      setApiData(response.data);
+      setApiData(response.data.feed);
     });
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchUrl]);
 
   const fetchNewsHandler = () => {
     // setGetData((prevCheck) => !prevCheck);
     setGetData(true);
   };
-  const urlHandler = (event) => {
-    console.log("url button", buttonRef.current.value);
-  };
 
-  const newsKeys = Object.entries(apiData);
-  const intensityKeys = Object.entries(apiData);
-  // Log out what's being passed
+  const newsButtonHandler = () => {
+    setUrl("http://api.geonet.org.nz/news/geonet");
+  };
+  const intensityButtonHandler = () => {
+    setUrl("http://api.geonet.org.nz/intensity?type=measured");
+  };
 
   return (
     <>
@@ -57,7 +57,7 @@ const GeoFetch = () => {
         {fetchUrl == endPoints.intensity.url ? (
           <Intensity apiData={apiData} />
         ) : (
-          "No Intensity Url supplied"
+          ""
         )}
       </div>
     </>

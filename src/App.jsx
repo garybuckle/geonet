@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>GEONET - Earthquake info for NZ </h1>
+        <h1>GEOFetch - Earthquake info for NZ </h1>
       </div>
       <div>
         <GeoFetch />
