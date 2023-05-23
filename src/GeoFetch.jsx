@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
-import News from './components/News';
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import News from "./components/News";
 
 const GeoFetch = () => {
   const [apiData, setApiData] = useState([]);
   const [getData, setGetData] = useState(false);
-  const [url, setUrl] = useState('news');
+  const [url, setUrl] = useState("news");
   const endPoints = {
-    news: { url: 'http://api.geonet.org.nz/news/geonet' },
+    news: { url: "http://api.geonet.org.nz/news/geonet" },
     strong: {
-      url: 'http://api.geonet.org.nz/geonet/intensity/strong/processed/',
+      url: "http://api.geonet.org.nz/geonet/intensity/strong/processed/",
     },
-    intensity: { url: 'http://api.geonet.org.nz/intensity?type=measured' },
+    intensity: { url: "http://api.geonet.org.nz/intensity?type=measured" },
   };
   const fetchUrl = endPoints.news.url;
   const fetchData = () => {
@@ -22,14 +22,14 @@ const GeoFetch = () => {
 
   useEffect(() => {
     fetchData();
-  }, [getData]);
+  }, []);
 
   const fetchNewsHandler = () => {
     // setGetData((prevCheck) => !prevCheck);
     setGetData(true);
   };
   const urlHandler = (event) => {
-    console.log('url button', buttonRef.current.value);
+    console.log("url button", buttonRef.current.value);
   };
 
   const newsKeys = Object.entries(apiData);
@@ -46,18 +46,18 @@ const GeoFetch = () => {
         </div>
       </div>
       <div>
-        {console.log('Raw api data ', { apiData })}
+        {console.log("Raw api data ", { apiData })}
 
         <h2>Results</h2>
         {fetchUrl == endPoints.news.url ? (
           <News apiData={apiData} />
         ) : (
-          'No News Url supplied'
+          "No News Url supplied"
         )}
         {fetchUrl == endPoints.intensity.url ? (
           <Intensity apiData={apiData} />
         ) : (
-          'No Intensity Url supplied'
+          "No Intensity Url supplied"
         )}
       </div>
     </>
